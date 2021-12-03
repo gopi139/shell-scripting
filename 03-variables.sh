@@ -23,5 +23,7 @@ echo $x*$y =500
 DATE=$(date +%F)
 echo welcome, today date is $DATE
 
+## arthmatic expression ; syntax: var=$((expression)) ex: var=$((2+3-5))
 
-
+x=$((2+3+6+6+7))
+echo value of x is $x
