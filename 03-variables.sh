@@ -27,3 +27,5 @@ echo welcome, today date is $DATE
 
 x=$((2+3+6+6+7))
 echo value of x is $x
+
+echo COURSE NAME = $COURSE_NAME
