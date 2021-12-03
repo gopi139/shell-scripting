@@ -13,3 +13,5 @@ echo -e "\e[33mtext in yellow colour"
 echo -e "\e[34mtext in blue colour"
 echo -e "\e[35mtext in magenta colour"
 echo -e "\e[36mtext in cyan colour"
+
+echo -e "\e[33mtext in red colour"
