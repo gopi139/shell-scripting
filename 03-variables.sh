@@ -16,4 +16,5 @@ echo vaie of a=${a}
 
 x=20
 y=25
-echo $x*$y =200
+echo $x*$y =500
+
