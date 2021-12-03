@@ -4,4 +4,4 @@ echo hai
 
 echo new world
 
-echo -e "welcomenewworld"
+echo -e "welcome/nnewworld/nhai"
