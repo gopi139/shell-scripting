@@ -18,3 +18,8 @@ x=20
 y=25
 echo $x*$y =500
 
+## for getting dynamic data ; syntax: var=$(command)
+
+date =$(date +%F)
+echo welcome to new biggining
+
