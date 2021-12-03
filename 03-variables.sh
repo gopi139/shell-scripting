@@ -20,7 +20,7 @@ echo $x*$y =500
 
 ## for getting dynamic data ; syntax: var=$(command)
 
-DATE =$(date +%F)
+DATE=$(date +%F)
 echo welcome, today date is $DATE
 
 
