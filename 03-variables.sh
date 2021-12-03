@@ -13,3 +13,7 @@ echo value of a=$a
 echo value of b=$b
 
 echo vaie of a=${a}
+
+x=20
+y=25
+echo $x*$y =200
