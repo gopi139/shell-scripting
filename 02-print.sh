@@ -17,3 +17,5 @@ echo -e "\e[36mtext in cyan colour"
 echo -e "\e[33mtext in red colour\e[0m"
 
 echo text in normal colour
+
+echo -e "\e[31m gopi \n \e[32m gopi\n \e[33m gopi"
