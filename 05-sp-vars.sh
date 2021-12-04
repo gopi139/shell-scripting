@@ -45,3 +45,6 @@ echo -e "your name:$1\nyour age:$2"
 # ls: cannot access /boo1: No such file or directory
 # dr-xr-xr-x. 5 root root 4096 Nov 11 17:00 /boot
 # [ centos@ip-172-31-81-229 ~/shell-scripting ]$
+
+# show no output in screen we use &>/dev/null
+# ex:[ centos@ip-172-31-81-229 ~/shell-scripting ]$ ls -ld /tmp /too &>/dev/null
