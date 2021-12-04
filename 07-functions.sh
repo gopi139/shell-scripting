@@ -16,7 +16,7 @@ xyz(){
 }
 #main program
 a=10
-abd
+#abd
 abd $1
 echo exit status of abd $?
 echo b in main program =$b
