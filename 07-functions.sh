@@ -6,6 +6,7 @@
 function abd(){
   echo iam function abd
   echo a in a function = $a
+  echo 1st argument of function =$1
   b=20
 }
 
@@ -17,3 +18,5 @@ a=10
 abd
 echo b in main program =$b
 xyz
+
+echo 1st argument of main program =$1
