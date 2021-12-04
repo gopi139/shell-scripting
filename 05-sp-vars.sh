@@ -20,3 +20,9 @@ echo -e "your name:$1\nyour age:$2"
 # ex: echo "a"----> output: a
 #     echo a -----> output: gives some number like 10,20...etc
 
+
+# redirectors(<,>) are used to give input directly to files
+# > = standard output
+# < = standard input
+# >> = double append .. it gives the previous data as well as current data
+
