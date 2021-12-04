@@ -13,5 +13,5 @@ xyz(){
 }
 #main program
 abd
-xyz
 a=10
+xyz
