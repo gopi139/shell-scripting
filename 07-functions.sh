@@ -12,6 +12,6 @@ xyz(){
   echo iam function xyz
 }
 #main program
-abd
 a=10
+abd
 xyz
