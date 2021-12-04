@@ -16,7 +16,7 @@ xyz(){
 #main program
 a=10
 abd
-$1=raju
+abd $1
 echo b in main program =$b
 xyz
 
