@@ -6,3 +6,4 @@ function abd(){
 }
 
 #main program
+abd
