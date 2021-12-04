@@ -7,6 +7,7 @@ function abd(){
   echo iam function abd
   echo a in a function = $a
   echo 1st argument of function =$1
+  return
   b=20
 }
 
@@ -17,6 +18,7 @@ xyz(){
 a=10
 abd
 abd $1
+echo exit status of abd $?
 echo b in main program =$b
 xyz
 
