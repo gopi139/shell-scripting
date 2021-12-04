@@ -6,6 +6,7 @@
 function abd(){
   echo iam function abd
   echo a in a function = $a
+  b=20
 }
 
 xyz(){
@@ -14,4 +15,5 @@ xyz(){
 #main program
 a=10
 abd
+echo b in main program =$b
 xyz
