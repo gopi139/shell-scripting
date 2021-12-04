@@ -2,6 +2,7 @@
 # name assigned to set of commands is called function
 # function are used to keep the code  DRY(Don't Repeat Yourself) i.e reusability
 # function should be declared before using it
+# to come out of the function we use "return" command
 
 function abd(){
   echo iam function abd
