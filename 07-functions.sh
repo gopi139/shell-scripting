@@ -6,10 +6,11 @@
 function abd(){
   echo iam function abd
 }
-
+echo a in a function =$a
 xyz(){
   echo iam function xyz
 }
 #main program
 abd
 xyz
+a=10
