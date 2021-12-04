@@ -5,5 +5,9 @@ function abd(){
   echo iam function abd
 }
 
+xyz(){
+  echo iam function xyz
+}
 #main program
 abd
+xyz
