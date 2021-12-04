@@ -7,7 +7,7 @@ function abd(){
   echo iam function abd
   echo a in a function = $a
   echo 1st argument of function =$1
-  return
+  return 20
   b=20
 }
 
