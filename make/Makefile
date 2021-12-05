@@ -1,5 +1,5 @@
 none:
-	@cho "one -target one\ntwo -target two"
+	@echo "one -target one\ntwo -target two"
 
 one:
 	@echo one
