@@ -7,7 +7,7 @@ Print "installing nginx"
 yum install nginx -y
 Print "enabling the nginx"
 systemctl enable nginx
-print "starting the nginx"
+Print "starting the nginx"
 systemctl start nginx
 exit
 
