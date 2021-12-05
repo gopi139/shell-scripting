@@ -2,8 +2,11 @@
 
 Print(){
   echo -e "\e[1m$1\e[0m"
+  echo -e "\n\e[36m============ $1 =============\e[0m" >>$LOG
 }
-Print "installing nginx"
+LOG=/tmp/roboshop.log
+rm -f $LOG
+Print "installing nginx" &>>LOG
 yum install nginx -y
 Print "enabling the nginx"
 systemctl enable nginx
