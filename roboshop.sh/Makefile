@@ -4,7 +4,7 @@ help:
 cart     : #### setup cart component
 	@bash components/cart.sh
 
-catalogue: ####  setup catalogue component
+catalogue: #### setup catalogue component
 	@bash compnents/catalogue.sh
 
 shipping : #### setup shipping component
@@ -28,5 +28,5 @@ redis    : #### setup redis component
 rabbitmq : #### setup rabbitmq component
 	@bash components/rabbitmq.sh
 
-user: #### setup user component
+user     : #### setup user component
 	@bash components/user.sh
