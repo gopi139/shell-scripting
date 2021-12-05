@@ -1,7 +1,7 @@
-none:
-	@echo "one -target one\ntwo -target two"
+help:
+	@grep '####' make
 
-one:
+one: #### target one
 	@echo one
-two:
+two: ####  target two
 	@echo two
