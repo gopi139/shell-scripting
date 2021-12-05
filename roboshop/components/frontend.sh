@@ -6,8 +6,8 @@ Print(){
 }
 LOG=/tmp/roboshop.log
 rm -f $LOG
-Print "installing nginx" &>>LOG
-yum install nginx -y
+Print "installing nginx"
+yum install nginx -y &>>LOG
 Print "enabling the nginx"
 systemctl enable nginx
 Print "starting the nginx"
