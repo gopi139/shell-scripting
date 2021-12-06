@@ -13,6 +13,8 @@ Print "starting the nginx"
 systemctl start nginx
 stat $?
 
+exit
+
 Print "download HTML pages"
 curl -s -L -o /tmp/frontend.zip "https://github.com/roboshop-devops-project/frontend/archive/main.zip" &>>$LOG
 stat $?
