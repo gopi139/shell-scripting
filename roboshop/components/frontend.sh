@@ -15,6 +15,7 @@ stat (){
       echo -e "\e[1;32msuccess\e[0m"
   else
       echo -e "\e[1;31mfailure\e[0m"
+      echo -e "\e[33mscript failed for detail log in $LOG file \e[0m"
       exit 1
   fi
 }
