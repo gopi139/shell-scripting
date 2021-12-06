@@ -21,7 +21,10 @@ Print "remove old html pages"
 rm -rf  /usr/share/nginx/html/* &>>$LOG
 stat $?
 
-#unzip /tmp/frontend.zip
+Print "extract frontend archive"
+unzip -d /usr/share/nginx/html /tmp/frontend.zip &>>$LOG
+stat $?
+
 #mv frontend-main/* .
 #mv static/* .
 #rm -rf frontend-master static README.md
