@@ -22,9 +22,9 @@ Print "copying files to nginx path"
 mv /tmp/frontend-main/static/*  /usr/share/nginx/html/.  &>>$LOG
 stat $?
 
-#Print "copy nginx roboshop config file"
-#cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf  &>>$LOG
-#stat $?
+Print "copy nginx roboshop config file"
+cp /tmp/frontend-main/localhost.conf /etc/nginx/default.d/roboshop.conf  &>>$LOG
+stat $?
 
 
 #Print "enabling the nginx"
