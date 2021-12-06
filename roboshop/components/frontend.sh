@@ -22,10 +22,13 @@ rm -rf  /usr/share/nginx/html/* &>>$LOG
 stat $?
 
 Print "extract frontend archive"
-unzip -d /usr/share/nginx/html /tmp/frontend.zip &>>$LOG
+unzip -d /tmp /tmp/frontend.zip &>>$LOG
 stat $?
 
-#mv frontend-main/* .
+Print "copying files to nginx path"
+mv /tmp/frontend-main/static/*  /usr/share/nginx/html/ .
+stat $?
+
 #mv static/* .
 #rm -rf frontend-master static README.md
 #mv localhost.conf /etc/nginx/default.d/roboshop.conf
