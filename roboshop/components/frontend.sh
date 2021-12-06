@@ -15,12 +15,13 @@ stat (){
       echo -e "\e[1;32msuccess\e[0m"
   else
       echo -e "\e[1;31mfailure\e[0m"
+      exit 1
   fi
 }
 LOG=/tmp/roboshop.log
 rm -f $LOG
 Print "installing nginx"
-yum install nginx -y &>>$LOG
+yum install nginxx -y &>>$LOG
 stat $?
 
 Print "enabling the nginx"
