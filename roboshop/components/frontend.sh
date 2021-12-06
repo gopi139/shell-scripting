@@ -22,7 +22,7 @@ stat (){
 LOG=/tmp/roboshop.log
 rm -f $LOG
 Print "installing nginx"
-yum install nginxx -y &>>$LOG
+yum install nginx -y &>>$LOG
 stat $?
 
 Print "enabling the nginx"
