@@ -1,6 +1,7 @@
 help:
 	@grep '####' Makefile | grep -v grep | sed -e 's/####//'
-git pull:
+
+it pull:
 	@echo --------- pulling git code -------
 	@git pull &>/dev/null
 
