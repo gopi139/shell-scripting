@@ -2,6 +2,12 @@
 
 Print(){
   echo -n -e "\e[1m$1\e[0m ......"
+# -n gives the continue to next line
+# ex:[ centos@ip-172-31-90-34 ~/shell-scripting/roboshop ]$ echo hello
+     #hello
+     #[ centos@ip-172-31-90-34 ~/shell-scripting/roboshop ]$ echo -n hello
+     #hello[ centos@ip-172-31-90-34 ~/shell-scripting/roboshop ]$
+
   echo -e "\n\e[36m============ $1 =============\e[0m" >>$LOG
 }
 stat (){
