@@ -1,32 +1,35 @@
 help:
 	@grep '####' Makefile | grep -v grep | sed -e 's/####//'
+git pull:
+	@echo --------- pulling git code -------
+	@git pull &>/dev/null
 
-cart     : #### setup cart component
+cart     :git pull #### setup cart component
 	@bash components/cart.sh
 
-catalogue: #### setup catalogue component
+catalogue:git pull #### setup catalogue component
 	@bash compnents/catalogue.sh
 
-shipping : #### setup shipping component
+shipping :git pull #### setup shipping component
 	@bash components/shipping.sh
 
-frontend : #### setup frontend component
+frontend :git pull #### setup frontend component
 	@bash components/frontend.sh
 
-payment  : #### setup payment component
+payment  :git pull #### setup payment component
 	@bash components/payment.sh
 
-mongodb  : #### setup mongodb component
+mongodb  :git pull #### setup mongodb component
 	@bash components/mongodb.sh
 
-mysql    : #### setup mysql component
+mysql    :git pull #### setup mysql component
 	@bash components/mysql.sh
 
-redis    : #### setup redis component
+redis    :git pull #### setup redis component
 	@bash components/redis.sh
 
-rabbitmq : #### setup rabbitmq component
+rabbitmq :git pull #### setup rabbitmq component
 	@bash components/rabbitmq.sh
 
-user     : #### setup user component
+user     :git pull #### setup user component
 	@bash components/user.sh
