@@ -25,7 +25,7 @@ curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongo
 stat $?
 
 Print "extract schema"
-unzip -o  -d /tmp mongodb.zip &>>$LOG
+unzip -o  -d /tmp /tmp/mongodb.zip &>>$LOG
 stat $?
 Print "load schema"
 cd /tmp/mongodb-main
