@@ -33,7 +33,11 @@ stat $?
 
 Print "install nodejs dependencies"
 cd /home/roboshop/catalogue
-npm install &>>$LOG
+npm install --unsafe--perm &>>$LOG
+stat $?
+
+Print "fix app permissions"
+chown -R roboshop:roboshop /home/roboshop
 stat $?
 
 #NOTE: We need to update the IP address of MONGODB Server in systemd.service file
