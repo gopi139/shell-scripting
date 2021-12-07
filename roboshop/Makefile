@@ -9,7 +9,7 @@ cart     :git pull #### setup cart component
 	@bash components/cart.sh
 
 catalogue:git pull #### setup catalogue component
-	@bash compnents/catalogue.sh
+	@bash components/catalogue.sh
 
 shipping :git pull #### setup shipping component
 	@bash components/shipping.sh
