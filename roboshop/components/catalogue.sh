@@ -19,8 +19,14 @@ Print "download catalogue"
 curl -s -L -o /tmp/catalogue.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>$LOG
 stat $?
 
-#$ cd /home/roboshop
-#$ unzip /tmp/catalogue.zip
+Print "remove old catalogue"
+rm -rf /home/roboshop/catalogue
+star $?
+
+Print "extract catalogue"
+unzip -o -d /home/roboshop /tmp/catalogue.zip &>>$LOG
+stat $?
+
 #$ mv catalogue-main catalogue
 #$ cd /home/roboshop/catalogue
 #$ npm install
