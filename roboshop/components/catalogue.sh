@@ -21,7 +21,7 @@ stat $?
 
 Print "remove old catalogue"
 rm -rf /home/roboshop/catalogue
-star $?
+stat $?
 
 Print "extract catalogue"
 unzip -o -d /home/roboshop /tmp/catalogue.zip &>>$LOG
