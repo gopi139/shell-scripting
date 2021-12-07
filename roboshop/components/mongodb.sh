@@ -8,16 +8,16 @@ Print "installing mongodb"
 yum install -y mongodb-org &>>$LOG
 stat $?
 
+Print "update mongodb config file"
+sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
+stat $?
+
 Print "enabling mongodb"
 systemctl enable mongod &>>$LOG
 stat $?
 
 Print "starting mongodb"
-systemctl start mongod &>>$LOG
-stat $?
-
-Print "update mongodb config file"
-sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
+systemctl restart mongod &>>$LOG
 stat $?
 
 Print "download schema"
