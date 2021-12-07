@@ -16,19 +16,19 @@ Print "starting mongodb"
 systemctl start mongod &>>$LOG
 stat $?
 
-#Update Liste IP address from 127.0.0.1 to 0.0.0.0 in config file
-#Config file: /etc/mongod.conf
+Print "update mongodb config file"
+sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
+stat $?
 
-#then restart the service
+Print "download schema"
+curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG
+stat $?
 
-# systemctl restart mongod
-#Every Database needs the schema to be loaded for the application to work.
-#Download the schema and load it.
-
-# curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
-
-# cd /tmp
-# unzip mongodb.zip
-# cd mongodb-main
-# mongo < catalogue.js
-# mongo < users.js
+Print "extract schema"
+unzip -o  -d /tmp mongodb.zip &>>$LOG
+stat $?
+Print "load schema"
+cd /tmp/mongodb-main
+mongo < catalogue.js &>>$LOG
+mongo < users.js &>>$LOG
+stat $?
