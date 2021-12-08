@@ -1,4 +1,5 @@
 #!/bin/bash
+source components/common.sh
 
 Print "install redis repos"
 yum install  yum-utils http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y &>>$LOG
