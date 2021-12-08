@@ -37,7 +37,7 @@ NODEJS() {
   stat $?
 
   Print "download $COMPONENT_NAME"
-  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/catalogue/archive/main.zip" &>>$LOG
+  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
   stat $?
 
   Print "remove old content"
