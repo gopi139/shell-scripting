@@ -1,5 +1,8 @@
 #!/bin/bash
 
+cat $0 | grep ^Print
+exit
+
 source components/common.sh
 
 Print "install nodejs"
