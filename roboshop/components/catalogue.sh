@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cat $0 | grep ^Print | awk '{print $2}'
+cat $0 | grep ^Print | awk -F '"' '{print $2}'
 exit
 
 source components/common.sh
