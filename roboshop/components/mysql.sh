@@ -29,7 +29,7 @@ fi
 
 DOWNLOAD "/tmp"
 
- ## cd /tmp
- ## unzip mysql.zip
- ## cd mysql-main
- ## mysql -u root -pRoboShop@1 <shipping.sql
+Print "load schema"
+cd /tmp/mysql-main
+mysql -u root -pRoboShop@1 <shipping.sql &>>$LOG
+stat $?
