@@ -28,7 +28,7 @@ DOWNLOAD(){
     stat $?
 
   Print "extract $COMPONENT_NAME"
-    unzip -o -d /home/roboshop /tmp/${COMPONENT}.zip &>>$LOG
+    unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
     stat $?
 }
 
