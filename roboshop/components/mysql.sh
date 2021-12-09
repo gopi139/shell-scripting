@@ -22,8 +22,8 @@ NEW_PASSWORD=RoboShop@1
 echo 'show database;' | mysql -uroot -p"${NEW_PASSWORD}" &>>$LOG
 if [ $? -ne 0 ]; then
   Print "changing the default password"
-  echo -e "ALTER USER 'sudo root'@'localhost' IDENTIFIED BY '${NEW_PASSWORD}';\nuninstall plugin validate_password;" >/tmp/pass.sql
-  mysql -uroot -p"${NEW_PASSWORD}" </tmp/pass.sql &>>$LOG
+  echo -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '${NEW_PASSWORD}';\nuninstall plugin validate_password;" >/tmp/pass.sql
+  mysql -uroot -p"${DEFAULT_PASSWORD}" </tmp/pass.sql &>>$LOG
 fi
 
 #
