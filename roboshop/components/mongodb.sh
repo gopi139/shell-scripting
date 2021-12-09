@@ -20,15 +20,9 @@ Print "starting mongodb"
 systemctl restart mongod &>>$LOG
 stat $?
 
-Print "download schema"
-curl -s -L -o /tmp/mongodb.zip "https://github.com/roboshop-devops-project/mongodb/archive/main.zip" &>>$LOG
-stat $?
+DOWNLOAD "/tmp"
 
-Print "extract schema"
-unzip -o  -d /tmp /tmp/mongodb.zip &>>$LOG
-stat $?
 Print "load schema"
 cd /tmp/mongodb-main
-mongo < catalogue.js &>>$LOG
-mongo < users.js &>>$LOG
+mongo < catalogue.js &>>$LOG && mongo < users.js &>>$LOG
 stat $?
