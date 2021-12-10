@@ -37,7 +37,7 @@ DOWNLOAD(){
 
   if [ $1 == "/home/roboshop/" ]; then
   Print "copy content"
-    mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT} &>>$LOG
+    mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
     stat $?
   fi
 }
