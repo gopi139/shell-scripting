@@ -30,41 +30,30 @@ DOWNLOAD(){
   Print "extract $COMPONENT_NAME"
     unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
     stat $?
+
+    Print "remove old content"
+    rm -rf $1 /tmp/${COMPONENT}
+    stat $?
+
+  if [ $1 == /home/roboshop/ ]; then
+  Print "copy content"
+    mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT} &>>$LOG
+    stat $?
+  fi
 }
 
-NODEJS() {
-  Print "install nodejs"
-  yum install nodejs make gcc-c++ -y &>>$LOG
-  stat $?
-
+ROBOSHOP_USER(){
   Print "add $COMPONENT_NAME roboshop"
-  id roboshop &>>$LOG
-  if [ $? -eq 0 ]; then
-    echo "user roboshop already exists" &>>$LOG
-  else
-    useradd roboshop &>>$LOG
- fi
-  stat $?
+    id roboshop &>>$LOG
+    if [ $? -eq 0 ]; then
+      echo "user roboshop already exists" &>>$LOG
+    else
+      useradd roboshop &>>$LOG
+   fi
+    stat $?
+}
 
-  DOWNLOAD "home/roboshop"
-
-  Print "remove old content"
-  rm -rf $1 /tmp/${COMPONENT}
-  stat $?
-
-  Print "extract $COMPONENT_NAME"
-  unzip -o -d /home/roboshop /tmp/${COMPONENT}.zip &>>$LOG
-  stat $?
-
-  Print "copy content"
-  mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT} &>>$LOG
-  stat $?
-
-  Print "install nodejs dependencies"
-  cd /home/roboshop/${COMPONENT}
-  npm install --unsafe-perm &>>$LOG
-  stat $?
-
+SYSTEMD() {
   Print "fix app permissions"
   chown -R roboshop:roboshop /home/roboshop
   stat $?
@@ -80,6 +69,48 @@ NODEJS() {
   Print "start $COMPONENT_NAME service"
   systemctl daemon-reload &>>$LOG && systemctl start ${COMPONENT} &>>$LOG && systemctl enable ${COMPONENT} &>>$LOG
   stat $?
+}
+
+MAVEN(){
+  Print "install maven"
+  yum install maven -y
+  stat $?
+
+  ROBOSHOP_USER
+
+  DOWNLOAD "home/roboshop"
+
+  Print "make maven package"
+  cd /home/roboshop/${COMPONENT}
+  mvn clean package &>>$LOG && mv target/shipping-1.0.jar shipping.jar &>>$LOG
+  stat $?
+
+  SYSTEMD
+}
+
+NODEJS() {
+  Print "install nodejs"
+  yum install nodejs make gcc-c++ -y &>>$LOG
+  stat $?
+
+  ROBOSHOP_USER
+
+  DOWNLOAD "home/roboshop"
+
+
+
+  Print "extract $COMPONENT_NAME"
+  unzip -o -d /home/roboshop /tmp/${COMPONENT}.zip &>>$LOG
+  stat $?
+
+
+
+  Print "install nodejs dependencies"
+  cd /home/roboshop/${COMPONENT}
+  npm install --unsafe-perm &>>$LOG
+  stat $?
+
+  SYSTEMD
 
 }
 
