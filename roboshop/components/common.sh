@@ -73,7 +73,7 @@ SYSTEMD() {
 
 MAVEN(){
   Print "install maven"
-  yum install maven -y
+  yum install maven -y &>>$LOG
   stat $?
 
   ROBOSHOP_USER
