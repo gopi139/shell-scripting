@@ -31,14 +31,13 @@ DOWNLOAD(){
   unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
   stat $?
 
-  Print "remove old content"
-  rm -rf $1 /tmp/${COMPONENT}
-  stat $?
-
-  if [ "$1" == "/home/roboshop/" ]; then
-  Print "copy content"
-  mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
-  stat $?
+  if [ "$1" == "/home/roboshop" ]; then
+    Print "remove old content"
+    rm -rf $1 /tmp/${COMPONENT}
+    stat $?
+    Print "copy content"
+    mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
+    stat $?
   fi
 }
 
