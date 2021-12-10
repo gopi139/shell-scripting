@@ -77,7 +77,7 @@ MAVEN(){
 
   ROBOSHOP_USER
 
-  DOWNLOAD "home/roboshop"
+  DOWNLOAD "/home/roboshop"
 
   Print "make maven package"
   cd /home/roboshop/${COMPONENT}
@@ -94,7 +94,7 @@ NODEJS() {
 
   ROBOSHOP_USER
 
-  DOWNLOAD "home/roboshop"
+  DOWNLOAD "/home/roboshop"
 
   Print "install nodejs dependencies"
   cd /home/roboshop/${COMPONENT}
