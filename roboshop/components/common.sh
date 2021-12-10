@@ -35,7 +35,7 @@ DOWNLOAD(){
     rm -rf $1 /tmp/${COMPONENT}
     stat $?
 
-  if [ $1 == /home/roboshop/ ]; then
+  if [ $1 == "/home/roboshop/" ]; then
   Print "copy content"
     mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT} &>>$LOG
     stat $?
