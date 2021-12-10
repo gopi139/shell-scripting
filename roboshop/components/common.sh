@@ -97,14 +97,6 @@ NODEJS() {
 
   DOWNLOAD "home/roboshop"
 
-
-
-  Print "extract $COMPONENT_NAME"
-  unzip -o -d /home/roboshop /tmp/${COMPONENT}.zip &>>$LOG
-  stat $?
-
-
-
   Print "install nodejs dependencies"
   cd /home/roboshop/${COMPONENT}
   npm install --unsafe-perm &>>$LOG
