@@ -24,33 +24,33 @@ rm -f $LOG
 
 DOWNLOAD(){
   Print "download $COMPONENT_NAME"
-    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
-    stat $?
+  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
+  stat $?
 
   Print "extract $COMPONENT_NAME"
-    unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
-    stat $?
+  unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
+  stat $?
 
   Print "remove old content"
-    rm -rf $1 /tmp/${COMPONENT}
-    stat $?
+  rm -rf $1 /tmp/${COMPONENT}
+  stat $?
 
   if [ "$1" == "/home/roboshop/" ]; then
   Print "copy content"
-    mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
-    stat $?
+  mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
+  stat $?
   fi
 }
 
 ROBOSHOP_USER(){
   Print "add $COMPONENT_NAME roboshop"
-    id roboshop &>>$LOG
-    if [ $? -eq 0 ]; then
+  id roboshop &>>$LOG
+  if [ $? -eq 0 ]; then
       echo "user roboshop already exists" &>>$LOG
-    else
+  else
       useradd roboshop &>>$LOG
-   fi
-    stat $?
+  fi
+  stat $?
 }
 
 SYSTEMD() {
