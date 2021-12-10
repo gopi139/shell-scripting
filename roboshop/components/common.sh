@@ -71,6 +71,24 @@ SYSTEMD() {
   stat $?
 }
 
+PYTHON() {
+  Print"Install Python 3"
+  yum install python36 gcc python3-devel -y &>>$LOG
+  stat $?
+
+  ROBOSHOP_USER
+
+  DOWNLOAD "/home/roboshop"
+
+  Print "Install the dependencies"
+  cd /home/roboshop/payment &>>$LOG
+  pip3 install -r requirements.txt &>>$LOG
+  stat $?
+
+  SYSTEMD
+}
+
+
 MAVEN(){
   Print "install maven"
   yum install maven -y &>>$LOG
