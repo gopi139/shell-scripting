@@ -31,7 +31,7 @@ DOWNLOAD(){
     unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
     stat $?
 
-    Print "remove old content"
+  Print "remove old content"
     rm -rf $1 /tmp/${COMPONENT}
     stat $?
 
