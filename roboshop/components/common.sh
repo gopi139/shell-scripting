@@ -35,8 +35,9 @@ DOWNLOAD(){
     Print "remove old content"
     rm -rf $1 /tmp/${COMPONENT}
     stat $?
+
     Print "copy content"
-    mv /home/roboshop/${COMPONENT}-main home/roboshop/${COMPONENT}
+    mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
     stat $?
   fi
 }
