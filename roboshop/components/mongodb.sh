@@ -1,6 +1,9 @@
 #!/bin/bash
 source components/common.sh
 
+COMPONENT_NAME=mongoDB
+COMPONENT=mongodb
+
 Print "download repo file "
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo &>>$LOG
 stat $?
