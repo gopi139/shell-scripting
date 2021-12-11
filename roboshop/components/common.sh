@@ -81,8 +81,14 @@ PYTHON() {
   DOWNLOAD "/home/roboshop"
 
   Print "Install the dependencies"
-  cd /home/roboshop/payment &>>$LOG
+  cd /home/roboshop/${COMPONENT} &>>$LOG
   pip3 install -r requirements.txt &>>$LOG
+  stat $?
+  USER_ID=$(id -u roboshop)
+  GROUP_ID=$(id -g roboshop)
+
+  Print "update ${COMPONENT_NAME} service"
+  echo -i -e "/uid/ c uid =${USER_ID}" -e "/gid/ c gid =${GROUP_ID}" /home/roboshop/${COMPONENT}/${COMPONENT}.ini &>>$LOG
   stat $?
 
   SYSTEMD
