@@ -122,7 +122,7 @@ NODEJS() {
   DOWNLOAD "/home/roboshop"
 
   Print "install nodejs dependencies"
-  cd /home/roboshop/${COMPONENT-MAIN}
+  cd /home/roboshop/${COMPONENT}
   npm install --unsafe-perm &>>$LOG
   stat $?
 
