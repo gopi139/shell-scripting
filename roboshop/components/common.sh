@@ -72,7 +72,7 @@ SYSTEMD() {
 }
 
 PYTHON() {
-  Print"Install Python 3"
+  Print "Install Python 3"
   yum install python36 gcc python3-devel -y &>>$LOG
   stat $?
 
