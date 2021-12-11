@@ -4,19 +4,19 @@ source components/common.sh
 Print "download repo file "
 curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/roboshop-devops-project/mongodb/main/mongo.repo &>>$LOG
 stat $?
-Print "installing mongodb"
+Print "installing mongoDB"
 yum install -y mongodb-org &>>$LOG
 stat $?
 
-Print "update mongodb config file"
+Print "update mongoDB config file"
 sed -i -e 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf &>>$LOG
 stat $?
 
-Print "enabling mongodb"
+Print "enabling mongoDB"
 systemctl enable mongod &>>$LOG
 stat $?
 
-Print "starting mongodb"
+Print "starting mongoDB"
 systemctl restart mongod &>>$LOG
 stat $?
 
