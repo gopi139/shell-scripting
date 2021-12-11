@@ -27,13 +27,13 @@ DOWNLOAD(){
   curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
   stat $?
 
-  Print "extract $COMPONENT content"
+  Print "extract $COMPONENT_NAME content"
   unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
   stat $?
 
   if [ "$1" == "/home/centos/roboshop" ]; then
     Print "remove old content"
-    rm -rf $1 /tmp/${COMPONENT}
+    rm -rf /home/roboshop/${COMPONENT}
     stat $?
 
     Print "copy content"
