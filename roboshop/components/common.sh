@@ -27,11 +27,11 @@ DOWNLOAD(){
   curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/roboshop-devops-project/${COMPONENT}/archive/main.zip" &>>$LOG
   stat $?
 
-  Print "extract $COMPONENT_NAME"
+  Print "extract $COMPONENT_NAME content"
   unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
   stat $?
 
-  if [ "$1" == "/home/roboshop" ]; then
+  if [ "$1" == "sudo /home/roboshop" ]; then
     Print "remove old content"
     rm -rf $1 /tmp/${COMPONENT}
     stat $?
