@@ -20,7 +20,7 @@ Print "starting mongodb"
 systemctl restart mongod &>>$LOG
 stat $?
 
-DOWNLOAD "/tmp"
+DOWNLOAD "/tmp/"
 
 Print "load schema"
 cd /tmp/mongodb-main
