@@ -105,7 +105,7 @@ MAVEN(){
   DOWNLOAD "/home/roboshop"
 
   Print "make maven package"
-  cd /home/roboshop/${COMPONENT}
+  sudo cd /home/roboshop/${COMPONENT}
   mvn clean package &>>$LOG && mv target/shipping-1.0.jar shipping.jar &>>$LOG
   stat $?
 
