@@ -37,7 +37,7 @@ DOWNLOAD(){
     stat $?
 
     Print "copy content"
-    mv -r /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
+    mv /home/roboshop/${COMPONENT}-main /home/roboshop/${COMPONENT}
     stat $?
   fi
 }
