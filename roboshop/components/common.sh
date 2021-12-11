@@ -28,7 +28,7 @@ DOWNLOAD(){
   stat $?
 
   Print "extract $COMPONENT_NAME content"
-  unzip -o -d $1 /tmp /tmp/${COMPONENT}.zip &>>$LOG
+  unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
   stat $?
 
   if [ "$1" == "/home/roboshop" ]; then
