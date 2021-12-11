@@ -31,7 +31,7 @@ DOWNLOAD(){
   unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
   stat $?
 
-  if [ "$1" == "sudo /home/roboshop" ]; then
+  if [ "$1" == "/home/roboshop" ]; then
     Print "remove old content"
     rm -rf $1 /tmp/${COMPONENT}
     stat $?
@@ -105,7 +105,7 @@ MAVEN(){
   DOWNLOAD "/home/roboshop"
 
   Print "make maven package"
-  sudo cd /home/roboshop/${COMPONENT}
+  cd /home/roboshop/${COMPONENT}
   mvn clean package &>>$LOG && mv target/shipping-1.0.jar shipping.jar &>>$LOG
   stat $?
 
