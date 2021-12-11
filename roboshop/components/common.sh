@@ -31,7 +31,7 @@ DOWNLOAD(){
   unzip -o -d $1 /tmp/${COMPONENT}.zip &>>$LOG
   stat $?
 
-  if [ "$1" == "/home/centos/roboshop" ]; then
+  if [ "$1" == "/home/roboshop" ]; then
     Print "remove old content"
     rm -rf /home/roboshop/${COMPONENT}
     stat $?
@@ -43,7 +43,7 @@ DOWNLOAD(){
 }
 
 ROBOSHOP_USER(){
-  Print "add $COMPONENT_NAME roboshop"
+  Print "add  roboshop user"
   id roboshop &>>$LOG
   if [ $? -eq 0 ]; then
       echo "user roboshop already exists" &>>$LOG
@@ -59,7 +59,7 @@ SYSTEMD() {
   stat $?
 
   Print "update DNS record in systemD config"
-  sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/g' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/g' -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
+  sed -i -e 's/MONGO_DNSNAME/mongodb.roboshop.internal/g' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/g' -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/USERHOST/user.roboshop.internal/g' -e 's/AMQPHOST/rabbitmq.roboshop.internal/g'  /home/roboshop/${COMPONENT}/systemd.service &>>$LOG
   stat $?
 
   Print "copy systemD  file"
@@ -81,14 +81,14 @@ PYTHON() {
   DOWNLOAD "/home/roboshop"
 
   Print "Install the dependencies"
-  cd /home/roboshop/${COMPONENT} &>>$LOG
+  cd /home/roboshop/${COMPONENT}
   pip3 install -r requirements.txt &>>$LOG
   stat $?
   USER_ID=$(id -u roboshop)
   GROUP_ID=$(id -g roboshop)
 
   Print "update ${COMPONENT_NAME} service"
-  echo -i -e "/uid/ c uid =${USER_ID}" -e "/gid/ c gid =${GROUP_ID}" /home/roboshop/${COMPONENT}/${COMPONENT}.ini &>>$LOG
+  sed -i -e "/uid/ c uid =${USER_ID}" -e "/gid/ c gid =${GROUP_ID}" /home/roboshop/${COMPONENT}/${COMPONENT}.ini &>>$LOG
   stat $?
 
   SYSTEMD
