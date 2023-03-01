@@ -1,6 +1,6 @@
 echo welcome
 
-echo hai
+echo hai/hello
 
 echo new world
 
